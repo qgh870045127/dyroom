@@ -45,8 +45,9 @@ export default {
   font-size: 15px;
   transition: 0.3s ease-in-out;
   &-default {
-    border-color: $default;
-    background-color: $default;
+    color:#000;
+    border-color: #ff443f;
+    background-color: #fff;
     &:active,
     &:focus,
     &:hover {

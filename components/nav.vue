@@ -59,16 +59,9 @@ export default {
       })
     },
     handleLeave(event, index) {
-      if (this.isActived) {
-        this.handleSetPosition({
-          opacity: 1,
-          left: this.isActived
-        })
-        return
-      }
       this.handleSetPosition({
-        opacity: 0,
-        left: index + 1 > this.menuData.length / 2 ? '100%' : '-100px'
+        opacity: 1,
+        left: this.isActived
       })
     },
     handleSetPosition(object) {
