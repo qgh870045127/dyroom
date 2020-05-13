@@ -21,7 +21,8 @@
     padding: 0;
   }
   #container {
-    background-color: #f8f8f8;
     min-height: calc(100vh - 210px);
+    max-width: 1200px;
+    margin: 0 auto;
   }
 </style>
