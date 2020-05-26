@@ -7,21 +7,24 @@
 <script>
 import movieList from '@/components/movieList'
 export default {
-  components:{
+  components: {
     movieList
   },
-  data(){
+  data() {
     return {
-      info:[]
+      info: []
     }
   },
-  created(){
-      this.info = new Array(10).fill({
-          img:require('../assets/bg.jpg'),
-          title:'蜘蛛侠',
-          enTitle:'蜘蛛侠',
-          rate:'7'
-        })
+  created() {
+    this.$axios
+      .get('/index/moviesList', {
+        params: {
+          row: 100
+        }
+      })
+      .then(res => {
+        this.info = res.data.result
+      })
   }
 }
 </script>

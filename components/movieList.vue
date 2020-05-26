@@ -7,16 +7,16 @@
     <div class="mContent">
       <div class="box" v-for="(item, index) in info" :key="index">
         <div class="imgBox">
-          <img :src="item.img" alt />
+          <img :src="item.imgUrl" alt />
           <span></span>
         </div>
         <div class="messageBox">
           <div class="txtBox">
-            <p>{{ item.title }}</p>
-            <p>{{ item.enTitle }}</p>
+            <p>{{ item.name }}</p>
+            <p>{{ item.name }}</p>
           </div>
           <div class="grade">
-            {{ item.rate }}
+            {{ parseFloat(item.rate) }}
           </div>
         </div>
       </div>
@@ -47,13 +47,13 @@ export default {
 
 .m .title span {
   display: block;
-  width: 70px;
+  width: 40px;
   height: 6px;
   background-color: #0399df;
   border-radius: 5px;
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
   .m .mContent {
     display: flex !important;
     flex-wrap: wrap;
@@ -90,7 +90,7 @@ export default {
   display: block;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -2px;
   width: 0;
   height: 0;
   border-bottom: 30px solid #fff;
@@ -104,20 +104,30 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
+
 .m .mContent .box .messageBox .txtBox :nth-child(1) {
   margin: 5px 0;
-  font-size: 18px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90px;
 }
 
 .m .mContent .box .messageBox .txtBox :nth-child(2) {
   margin: 5px 0;
-  font-size: 16px;
+  font-size: 14px;
   color: #ccc;
   font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90px;
 }
 
 .m .mContent .box .messageBox .grade {
-  font-size: 30px;
+  font-size: 24px;
   color: #f7b14f;
-}</style
+}
+</style
 >>

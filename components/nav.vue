@@ -1,5 +1,5 @@
 <template>
-  <div class="m-nav">
+  <div ref="nav" class="m-nav">
     <div
       ref="navItem"
       class="m-nav-item"
@@ -33,7 +33,7 @@ export default {
       if (this.$route.path == element.id) {
         this.isActived = `${element.offsetLeft +
           Math.ceil(element.clientWidth / 4) +
-          4}px`
+          7}px`
         this.handleSetPosition({
           opacity: 1,
           width: `${element.clientWidth - 60}px`,
@@ -46,7 +46,7 @@ export default {
     handleClick(event, item) {
       this.isActived = `${event.target.offsetLeft +
         Math.ceil(event.target.clientWidth / 4) +
-        4}px`
+        7}px`
       this.$router.push(item.path)
     },
     handleEnter(event) {
@@ -55,7 +55,7 @@ export default {
         width: `${event.target.clientWidth - 60}px`,
         left: `${event.target.offsetLeft +
           Math.ceil(event.target.clientWidth / 4) +
-          4}px`
+          7}px`
       })
     },
     handleLeave(event, index) {
@@ -77,11 +77,13 @@ export default {
   position: relative;
   overflow: hidden;
   height: 100%;
+  min-height: 40px;
   align-items: center;
   .m-nav-item {
     cursor: pointer;
-    padding: 0px 30px;
     transition: all 0.3s;
+    text-align: center;
+    min-width: 90px;
     &:hover {
       color: red;
     }
